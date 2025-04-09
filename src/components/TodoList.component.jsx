@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../App.css';
 import TodoItem from "./TodoItem.component";
 
 function TodoList() {
-    const [tasks, setTasks] = useState([{
-        'id': 1,
-        'text': 'Clean desk',
-        'completed': true
-    },
-    {
-        'id': 2,
-        'text': 'Wash windows',
-        'completed': false
-    },
-    {
-        'id': 3,
-        'text': 'Take out trash',
-        'completed': false
-    }
-    ]);
+    const [tasks, setTasks] = useState([]);
     const [text, setText] = useState('');
+
+    async function mockApiCall() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve([{
+                    'id': 1,
+                    'text': 'Clean desk',
+                    'completed': true
+                },
+                {
+                    'id': 2,
+                    'text': 'Wash windows',
+                    'completed': false
+                },
+                {
+                    'id': 3,
+                    'text': 'Take out trash',
+                    'completed': false
+                }
+                ])
+            })
+        })
+    }
 
     function addTask(text) {
         const newTask = {
@@ -43,6 +51,10 @@ function TodoList() {
             }
         }));
     }
+
+    useEffect(() => {
+        // TODO: Call mockApiCall function on line 9 to get initial data.
+    }, [])
 
     return (
         <div className="todo-list">
