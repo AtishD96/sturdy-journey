@@ -25,7 +25,7 @@ function TodoList() {
         const newTask = {
             id: Date.now(),
             text,
-            completed: true
+            completed: false
         };
         setTasks([...tasks, newTask]);
     }
