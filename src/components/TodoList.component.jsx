@@ -28,7 +28,6 @@ function TodoList() {
             completed: true
         };
         setTasks([...tasks, newTask]);
-        setText('');
     }
 
     function deleteTask() {
