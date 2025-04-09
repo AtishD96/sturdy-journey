@@ -5,9 +5,19 @@ import TodoItem from "./TodoItem.component";
 function TodoList() {
     const [tasks, setTasks] = useState([{
         'id': 1,
-        'text': '456',
+        'text': 'Clean desk',
         'completed': true
     },
+    {
+        'id': 2,
+        'text': 'Wash windows',
+        'completed': false
+    },
+    {
+        'id': 3,
+        'text': 'Take out trash',
+        'completed': false
+    }
     ]);
     const [text, setText] = useState('');
 
@@ -15,14 +25,14 @@ function TodoList() {
         const newTask = {
             id: Date.now(),
             text,
-            completed: false
+            completed: true
         };
         setTasks([...tasks, newTask]);
         setText('');
     }
 
-    function deleteTask(id) {
-        setTasks(tasks.filter(task => task.id !== id));
+    function deleteTask() {
+        setTasks(tasks.filter(task => task.completed !== false));
     }
 
     function toggleCompleted(id) {

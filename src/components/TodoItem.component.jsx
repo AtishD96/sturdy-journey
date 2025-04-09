@@ -13,7 +13,7 @@ function TodoItem({ task, deleteTask, toggleCompleted }) {
                 onChange={handleChange}
             />
             <p>{task.text}</p>
-            <button onClick={() => deleteTask(task.id)}>
+            <button onClick={() => deleteTask()}>
                 X
             </button>
         </div>
