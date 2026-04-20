@@ -63,6 +63,7 @@ function TodoList() {
         if(searchData!==''){
             const filterData=tasks.filter(task => task.text.toLowercase() === searchData.toLowercase());
             setTasks(filterData);
+            setSearch('');
         }
     }
 
