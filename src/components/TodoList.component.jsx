@@ -35,7 +35,7 @@ function TodoList() {
         }));
     }
 
-    // const mockApiCall=async()=>{
+    // const getMockApi=async()=>{
     //     try{
     //         const res=await fetch('mockApiCall.js');
     //         if(!res.ok){
